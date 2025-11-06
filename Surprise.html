@@ -1,23 +1,24 @@
+<!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>For Vivek 🫂 From Mantasha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background:
-    linear-gradient(135deg, rgba(253,246,240,0.7), rgba(227,240,255,0.7)),
-    url('2f8e91352f694109d30fdd887ae7ed2b.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: url('2f8e91352f694109d30fdd887ae7ed2b.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #0b1220;
+    }
 .wrap {
   max-width: 760px;
-  margin: 60px auto;
+  margin: 60px 0 60px 40px; /* shift slightly to the left */
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 12px 40px rgba(0,0,0,.1);
@@ -92,10 +93,9 @@ footer {
   margin-top: 30px;
   color: #64748b;
   font-size: 13px;
-  text-align: right;
+  text-align: left; /* align left with content */
 }
 
-/* Scattered photo gallery */
 .photo-scatter {
   position: relative;
   width: 100%;
@@ -125,7 +125,6 @@ footer {
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* Floating hearts */
 .heart {
   position: fixed;
   bottom: -10px;
@@ -138,7 +137,6 @@ footer {
   0% {transform: translateY(0) scale(1);}
   100% {transform: translateY(-110vh) scale(1.5); opacity: 0;}
 }
-```
 
   </style>
 </head>
@@ -148,23 +146,16 @@ footer {
     <h1>For Vivek 🫂 From Mantasha</h1>
     <div class="sub">ConstaCloud brought us together. This is a little memory I made from that cloud.</div>
 
-```
-<blockquote>
-  “मेरे हमदम, मेरे सुकून की वजह”
-</blockquote>
+<blockquote>“मेरे हमदम, मेरे सुकून की वजह”</blockquote>
 
 <div class="verse">How it starts?</div>
-<p>“We were in different cities, working on the same project — you as the developer, and me as the manager.
-```
+<p>“We were in different cities, working on the same project, you as the developer, and me as the manager.
 
 Tight deadlines, endless remote calls, and long evenings tried to wear us down. The job tested our patience, but your voice always gave me a reason to smile.
 What started as work slowly became my comfort, my peace.
 And maybe it all began the very first time I said ‘Sir, aapki awaaz bahut acchi hai.’” </p>
 
-```
-<div class="note">
-  “The best bug ConstaCloud ever gave me was you.”
-</div>
+<div class="note">“The best bug ConstaCloud ever gave me was you.”</div>
 
 <div class="verse">From ConstaCloud to You</div>
 <p>
@@ -200,7 +191,6 @@ And maybe it all began the very first time I said ‘Sir, aapki awaaz bahut acch
 </div>
 
 <footer>Save this page if you wish — but keep this card in your wallet always.</footer>
-```
 
   </div>
 
@@ -223,10 +213,14 @@ function onYouTubeIframeAPIReady() {
     playerVars: {
       autoplay: 1,
       start: 130, // 2:10 min
-      end: 214    // 3:34 min
+      end: 214,   // 3:34 min
+      controls: 0,
+      mute: 0
     },
     events: {
-      'onReady': function(event){ event.target.playVideo(); }
+      'onReady': function(event){ 
+        event.target.playVideo();
+      }
     }
   });
 }
