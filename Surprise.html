@@ -16,9 +16,10 @@
       background-size: cover;
       color: #0b1220;
     }
+
 .wrap {
   max-width: 760px;
-  margin: 60px 0 60px 40px; /* shift slightly to the left */
+  margin: 60px 0 60px 40px; /* slightly left */
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 12px 40px rgba(0,0,0,.1);
@@ -77,6 +78,7 @@ blockquote {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn:hover {
   transform: scale(1.05);
@@ -93,7 +95,7 @@ footer {
   margin-top: 30px;
   color: #64748b;
   font-size: 13px;
-  text-align: left; /* align left with content */
+  text-align: left;
 }
 
 .photo-scatter {
@@ -116,14 +118,8 @@ footer {
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-@keyframes fadeInUp {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes fadeInUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
 
 .heart {
   position: fixed;
@@ -133,28 +129,42 @@ footer {
   animation: floatUp 6s linear infinite;
   opacity: 0.7;
 }
-@keyframes floatUp {
-  0% {transform: translateY(0) scale(1);}
-  100% {transform: translateY(-110vh) scale(1.5); opacity: 0;}
+@keyframes floatUp { 0% {transform: translateY(0) scale(1);} 100% {transform: translateY(-110vh) scale(1.5); opacity: 0;} }
+
+#playButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background:#0b1220; 
+  color:#fff; 
+  padding:10px 18px; 
+  border:none; 
+  border-radius:10px; 
+  cursor:pointer;
+  font-size:16px;
 }
 
   </style>
 </head>
 <body>
 
+<button id="playButton">🎵 Play Our Song</button>
+
   <div class="wrap">
     <h1>For Vivek 🫂 From Mantasha</h1>
     <div class="sub">ConstaCloud brought us together. This is a little memory I made from that cloud.</div>
-
+    
 <blockquote>“मेरे हमदम, मेरे सुकून की वजह”</blockquote>
 
 <div class="verse">How it starts?</div>
 <p>“We were in different cities, working on the same project, you as the developer, and me as the manager.
 
 Tight deadlines, endless remote calls, and long evenings tried to wear us down. The job tested our patience, but your voice always gave me a reason to smile.
-What started as work slowly became my comfort, my peace.
-And maybe it all began the very first time I said ‘Sir, aapki awaaz bahut acchi hai.’” </p>
+What started as work slowly became my comfort, my peace.....
+And maybe it all began the very first time I said ‘Sir, aapki awaaz bahot acchi hai.’” </p>
 
+    
 <div class="note">“The best bug ConstaCloud ever gave me was you.”</div>
 
 <div class="verse">From ConstaCloud to You</div>
@@ -194,7 +204,7 @@ And maybe it all began the very first time I said ‘Sir, aapki awaaz bahut acch
 
   </div>
 
-  <!-- YouTube Music Player (Autoplay 2:10-3:34) -->
+  <!-- YouTube Player -->
 
   <div id="player"></div>
   <script>
@@ -203,7 +213,6 @@ And maybe it all began the very first time I said ‘Sir, aapki awaaz bahut acch
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-```
 var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
@@ -212,23 +221,24 @@ function onYouTubeIframeAPIReady() {
     videoId: 'YiPAupt5A1A',
     playerVars: {
       autoplay: 1,
-      start: 130, // 2:10 min
-      end: 214,   // 3:34 min
+      start: 130,
+      end: 214,
       controls: 0,
-      mute: 0
+      mute: 1
     },
-    events: {
-      'onReady': function(event){ 
-        event.target.playVideo();
-      }
-    }
+    events: { 'onReady': function(event){ event.target.playVideo(); } }
   });
 }
-```
+
+document.getElementById("playButton").addEventListener("click", function() {
+  player.unMute();
+  player.playVideo();
+  this.style.display = 'none';
+});
 
   </script>
 
-  <!-- Floating Hearts Script -->
+  <!-- Floating Hearts -->
 
   <script>
     const hearts = ["💗","💞","💖","💘"];
