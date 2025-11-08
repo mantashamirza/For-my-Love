@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For Vivek 🫂 From Mantasha</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: url('2f8e91352f694109d30fdd887ae7ed2b.jpg') no-repeat center center/cover;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.55);
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .sub {
+    font-size: 1rem;
+    color: #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 4px solid #ffd166;
+    padding-left: 15px;
+    color: #fff3cd;
+    margin: 20px auto;
+    max-width: 650px;
+  }
+
+  .story {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .note {
+    font-size: 0.9rem;
+    color: #ffd166;
+    margin-top: 20px;
+  }
+
+  .btn {
+    background: #ffd166;
+    color: #000;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #fff;
+  }
+
+  #reveal {
+    display: none;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.05rem;
+  }
+
+  footer {
+    margin-top: 35px;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+
+  /* Floating Polaroid Photos */
+  .photo {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    animation: float 10s infinite ease-in-out;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .photo:hover {
+    transform: scale(1.05);
+  }
+
+  /* Positions for 8 photos */
+  .p1 { top: 8%; left: 5%; transform: rotate(-8deg); }
+  .p2 { top: 18%; right: 6%; transform: rotate(5deg); }
+  .p3 { bottom: 20%; left: 8%; transform: rotate(4deg); }
+  .p4 { bottom: 15%; right: 8%; transform: rotate(-5deg); }
+  .p5 { top: 50%; left: -3%; transform: rotate(10deg); }
+  .p6 { top: 60%; right: -3%; transform: rotate(-10deg); }
+  .p7 { bottom: -5%; left: 35%; transform: rotate(3deg); }
+  .p8 { top: -5%; right: 35%; transform: rotate(-3deg); }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: fixed;
+    color: #ffb6c1;
+    font-size: 20px;
+    animation: floatHearts 6s ease-in infinite;
+    opacity: 0.7;
+    z-index: 0;
+  }
+
+  @keyframes floatHearts {
+    0% { transform: translateY(100vh) scale(0.8); opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+  }
+
+  @media(max-width:768px){
+    .photo{ width:80px; height:80px; }
+    blockquote{ font-size:1rem; }
+    h1{ font-size:1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<!-- Floating photos (replace with your own later) -->
+<img src="Screenshot 2025-11-08 114338.png" class="photo p1" alt="photo1">
+<img src="Snapchat-2011521765.jpg" class="photo p2" alt="photo2">
+<img src="IMG_20251106_143106_104.jpg" class="photo p3" alt="photo3">
+<img src="IMG_20251106_143103_326.jpg" class="photo p4" alt="photo4">
+<img src="photo5.jpg" class="photo p5" alt="photo5">
+<img src="photo6.jpg" class="photo p6" alt="photo6">
+<img src="photo7.jpg" class="photo p7" alt="photo7">
+<img src="photo8.jpg" class="photo p8" alt="photo8">
+
+<!-- Floating Hearts Script -->
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = Math.random() > 0.5 ? '🤍' : '💕';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (16 + Math.random() * 14) + 'px';
+    heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 400);
+</script>
+
+<div class="container">
+  <h1>For Vivek 🫂 From Mantasha</h1>
+  <div class="sub">ConstaCloud brought us together, but your heart kept me there.</div>
+
+  <blockquote>“मेरे हमदम, मेरे सुकून की वजह”</blockquote>
+
+  <div class="story">
+    We were in different cities, working on the same project, you as the developer, me as the manager.<br>
+    Tight deadlines, remote calls, and long evenings.<br><br>
+    The job tested us, but your voice gave me a reason to smile.  
+    What began as work became my refuge.  
+    And it all started the moment I said for the very first time,  
+    <strong>“Sir... aapki awaaz bahut acchi hai.”</strong>
+  </div>
+
+  <a class="btn" href="#" onclick="document.getElementById('reveal').style.display='block'; this.style.display='none'; return false;">Reveal My Birthday Promise</a>
+
+  <div id="reveal">
+    I once disappeared without a reason, leaving a story half-written.<br>
+    Yet when I returned, you opened the same page with a smile, not a question.<br><br>
+    Your kindness healed something I didn’t know was broken.  
+    So here’s my promise — I’ll never let fear write our pauses again.<br><br>
+    You deserve love that stays, not love that disappears.<br><br>
+    <em>Happy Birthday, Vivek — from the girl who found her calm in your kindness, and her forever in your heart.</em><br>
+    <div class="note">— Your BC Billi 😼</div>
+  </div>
+
+  <footer>Save this memory, but keep this moment in your heart forever 💛</footer>
+</div>
+
+<!-- Background Music -->
+<iframe width="0" height="0" src="https://www.youtube.com/embed/YiPAupt5A1A?start=130&autoplay=1&loop=1" frameborder="0" allow="autoplay"></iframe>
+
+</body>
+</html>
