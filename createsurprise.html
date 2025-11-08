@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For Vivek 🫂 From Mantasha</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: url('bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, 0.55);
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+  }
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .sub {
+    font-size: 1rem;
+    color: #f1f1f1;
+    margin-bottom: 25px;
+  }
+  blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 4px solid #ffd166;
+    padding-left: 15px;
+    color: #fff3cd;
+    margin: 20px auto;
+    max-width: 650px;
+  }
+  .story {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .note {
+    font-size: 0.9rem;
+    color: #ffd166;
+    margin-top: 20px;
+  }
+  .btn {
+    background: #ffd166;
+    color: #000;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: #fff;
+  }
+  #reveal {
+    display: none;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.05rem;
+  }
+  footer {
+    margin-top: 35px;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+  /* Floating Polaroid Photos */
+  .photo {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    animation: float 10s infinite ease-in-out;
+  }
+  .photo:nth-child(1){ top:10%; left:5%; transform:rotate(-8deg);}
+  .photo:nth-child(2){ top:20%; right:8%; transform:rotate(6deg);}
+  .photo:nth-child(3){ bottom:15%; left:10%; transform:rotate(5deg);}
+  .photo:nth-child(4){ bottom:10%; right:10%; transform:rotate(-6deg);}
+  @keyframes float {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+  @media(max-width:768px){
+    .photo{ width:80px; height:80px; }
+    blockquote{ font-size:1rem; }
+    h1{ font-size:1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<!-- Floating photos -->
+<img src="photo1.jpg" class="photo" alt="photo1">
+<img src="photo2.jpg" class="photo" alt="photo2">
+<img src="photo3.jpg" class="photo" alt="photo3">
+<img src="photo4.jpg" class="photo" alt="photo4">
+
+<div class="container">
+  <h1>For Vivek — From Mantasha</h1>
+  <div class="sub">ConstaCloud brought us together, but your heart kept me there.</div>
+
+  <blockquote>मेरा हमदम, मेरी सुकून की वजह।</blockquote>
+
+  <div class="story">
+    We were in different cities, working on the same project — you as the developer, me as the manager.<br>
+    Tight deadlines, remote calls, and long evenings.<br><br>
+    The job tested us, but your voice gave me a reason to smile.  
+    What began as work became my refuge.  
+    And it all started the moment I said for the very first time —  
+    <strong>“Sir... aapki awaaz bahut acchi hai.”</strong>
+  </div>
+
+  <a class="btn" href="#" onclick="document.getElementById('reveal').style.display='block'; this.style.display='none'; return false;">Reveal My Birthday Promise</a>
+
+  <div id="reveal">
+    I once disappeared without a reason, leaving a story half-written.<br>
+    Yet when I returned, you opened the same page with a smile, not a question.<br><br>
+    Your kindness healed something I didn’t know was broken.  
+    So here’s my promise — I’ll never let fear write our pauses again.<br><br>
+    You deserve love that stays, not love that disappears.<br><br>
+    <em>Happy Birthday, Vivek — from the girl who found her calm in your kindness, and her forever in your heart.</em><br>
+    <div class="note">— Your BC Billi 😼</div>
+  </div>
+
+  <footer>Save this memory, but keep this moment in your heart forever 💛</footer>
+</div>
+
+<!-- Background music -->
+<iframe width="0" height="0" src="https://www.youtube.com/embed/YiPAupt5A1A?start=130&autoplay=1&loop=1" frameborder="0" allow="autoplay"></iframe>
+
+</body>
+</html>
