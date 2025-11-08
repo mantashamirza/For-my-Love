@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>For Vivek 🫂 From Mantasha</title>
+
 <style>
   body {
     font-family: 'Poppins', sans-serif;
@@ -114,19 +115,18 @@
     transform: scale(1.05);
   }
 
-  /* Positions for 8 photos */
-  .p1 { top: 8%; left: 5%; transform: rotate(-8deg); }
-  .p2 { top: 18%; right: 6%; transform: rotate(5deg); }
-  .p3 { bottom: 20%; left: 8%; transform: rotate(4deg); }
-  .p4 { bottom: 15%; right: 8%; transform: rotate(-5deg); }
-  .p5 { top: 50%; left: -3%; transform: rotate(10deg); }
-  .p6 { top: 60%; right: -3%; transform: rotate(-10deg); }
-  .p7 { bottom: -5%; left: 35%; transform: rotate(3deg); }
-  .p8 { top: -5%; right: 35%; transform: rotate(-3deg); }
+  /* New balanced layout for 7 photos */
+  .p1 { top: 5%; left: 6%; transform: rotate(-8deg); }
+  .p2 { top: 10%; right: 6%; transform: rotate(5deg); }
+  .p3 { top: 40%; left: 3%; transform: rotate(8deg); }
+  .p4 { top: 35%; right: 3%; transform: rotate(-6deg); }
+  .p5 { bottom: 15%; left: 12%; transform: rotate(3deg); }
+  .p6 { bottom: 15%; right: 12%; transform: rotate(-3deg); }
+  .p7 { bottom: 5%; left: 50%; transform: translateX(-50%) rotate(1deg); }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(2deg); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   /* Floating hearts */
@@ -146,9 +146,10 @@
   }
 
   @media(max-width:768px){
-    .photo{ width:80px; height:80px; }
+    .photo{ width:75px; height:75px; }
+    h1{ font-size:1.5rem; }
     blockquote{ font-size:1rem; }
-    h1{ font-size:1.6rem; }
+    .container{ padding:20px 10px; }
   }
 </style>
 </head>
@@ -156,22 +157,22 @@
 
 <div class="overlay"></div>
 
-<!-- Floating photos (replace with your own later) -->
-<img src="Screenshot 2025-11-08 114338.png" class="photo p1" alt="photo1">
-<img src="Snapchat-2011521765.jpg" class="photo p2" alt="photo2">
-<img src="IMG_20251106_143106_104.jpg" class="photo p3" alt="photo3">
-<img src="IMG_20251106_143103_326.jpg" class="photo p4" alt="photo4">
-<img src="Snapchat-1115594145.jpg" class="photo p5" alt="photo5">
-<img src="Snapchat-2011521765.jpg" class="photo p6" alt="photo6">
-<img src="WhatsApp2.jpg.jpeg" class="photo p7" alt="photo7">
-<img src="WhatsApp1.jpg.jpeg" class="photo p8" alt="photo8">
+<!-- Floating Photos -->
+<img src="Screenshot 2025-11-08 114338.png" class="photo p1">
+<img src="Snapchat-2011521765.jpg" class="photo p2">
+<img src="IMG_20251106_143106_104.jpg" class="photo p3">
+<img src="IMG_20251106_143103_326.jpg" class="photo p4">
+<img src="Snapchat-1115594145.jpg" class="photo p5">
+<img src="WhatsApp2.jpg.jpeg" class="photo p6">
+<img src="WhatsApp1.jpg.jpeg" class="photo p7">
 
 <!-- Floating Hearts Script -->
 <script>
   function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    heart.innerHTML = Math.random() > 0.5 ? '🤍' : '💕' : '💞' : '❤️' ;
+    const hearts = ['🤍','💕','💞','❤️','💗'];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.fontSize = (16 + Math.random() * 14) + 'px';
     heart.style.animationDuration = (4 + Math.random() * 3) + 's';
@@ -211,6 +212,7 @@
   <footer>Save this memory, but keep this moment in your heart forever 💛</footer>
 </div>
 
+<!-- Background Music (normal playback) -->
 <audio autoplay loop>
   <source src="humdum.mp3" type="audio/mpeg">
 </audio>
