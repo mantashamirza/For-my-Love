@@ -6,21 +6,22 @@
 <title>For Vivek 🫂 From Mantasha</title>
 
 <style>
-  /* Desktop Background */
   body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: url('miyokudodesktop.jpg') no-repeat center center/cover;
+    background: url('miyokudodesktop.jpg.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     overflow-x: hidden;
+    min-height: 100vh;
     position: relative;
   }
 
-  /* Mobile Background */
   @media (max-width: 768px) {
     body {
-      background: url('miyokudo.jpg') no-repeat center center/cover;
+      background: url('miyokudo.jpg') no-repeat center center fixed;
       background-size: cover;
+      min-height: 100vh;
     }
   }
 
@@ -106,32 +107,29 @@
     color: #ccc;
   }
 
-  /* Floating Polaroid Photos */
+  /* Floating Polaroid Layout */
+  .photo-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
   .photo {
-    position: absolute;
     width: 120px;
     height: 120px;
     object-fit: cover;
     border: 4px solid #fff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    animation: float 10s infinite ease-in-out;
-    z-index: 1;
+    animation: float 6s infinite ease-in-out;
     transition: transform 0.3s ease;
   }
 
   .photo:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
-
-  /* Positions for 7 photos */
-  .p1 { top: 8%; left: 5%; transform: rotate(-8deg); }
-  .p2 { top: 18%; right: 6%; transform: rotate(5deg); }
-  .p3 { bottom: 20%; left: 8%; transform: rotate(4deg); }
-  .p4 { bottom: 15%; right: 8%; transform: rotate(-5deg); }
-  .p5 { top: 50%; left: -3%; transform: rotate(10deg); }
-  .p6 { top: 60%; right: -3%; transform: rotate(-10deg); }
-  .p7 { bottom: -2%; left: 50%; transform: translateX(-50%) rotate(3deg); } /* centered properly */
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -150,12 +148,11 @@
 
   @keyframes floatHearts {
     0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
-    50% { opacity: 1; }
     100% { transform: translateY(-10vh) scale(1.2); opacity: 1; }
   }
 
   @media(max-width:768px){
-    .photo{ width:80px; height:80px; }
+    .photo{ width:90px; height:90px; }
     blockquote{ font-size:1rem; }
     h1{ font-size:1.6rem; }
   }
@@ -165,16 +162,7 @@
 <body>
 <div class="overlay"></div>
 
-<!-- Floating photos -->
-<img src="Screenshot 2025-11-08 114338.png" class="photo p1" alt="photo1">
-<img src="Snapchat-2011521765.jpg" class="photo p2" alt="photo2">
-<img src="IMG_20251106_143106_104.jpg" class="photo p3" alt="photo3">
-<img src="IMG_20251106_143103_326.jpg" class="photo p4" alt="photo4">
-<img src="Snapchat-1115594145.jpg" class="photo p5" alt="photo5">
-<img src="WhatsApp2.jpg.jpeg" class="photo p6" alt="photo6">
-<img src="WhatsApp1.jpg.jpeg" class="photo p7" alt="photo7">
-
-<!-- Floating Hearts -->
+<!-- Floating hearts always running -->
 <script>
   function createHeart() {
     const heart = document.createElement('div');
@@ -183,7 +171,7 @@
     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.fontSize = (16 + Math.random() * 20) + 'px';
-    heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+    heart.style.animationDuration = (4 + Math.random() * 3) + 's';
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 7000);
   }
@@ -196,6 +184,17 @@
 
   <blockquote>“मेरे हमदम, मेरे सुकून की वजह”</blockquote>
 
+  <!-- Photo gallery (7 images) -->
+  <div class="photo-wrapper">
+    <img src="Screenshot 2025-11-08 114338.png" class="photo" alt="photo1">
+    <img src="Snapchat-2011521765.jpg" class="photo" alt="photo2">
+    <img src="IMG_20251106_143106_104.jpg" class="photo" alt="photo3">
+    <img src="IMG_20251106_143103_326.jpg" class="photo" alt="photo4">
+    <img src="Snapchat-1115594145.jpg" class="photo" alt="photo5">
+    <img src="WhatsApp2.jpg.jpeg" class="photo" alt="photo6">
+    <img src="WhatsApp1.jpg.jpeg" class="photo" alt="photo7">
+  </div>
+
   <div class="story">
     We were in different cities, working on the same project, you as the developer, me as the manager.<br>
     Tight deadlines, remote calls, and long evenings.<br><br>
@@ -205,15 +204,15 @@
     <strong>“Sir... aapki awaaz bahut acchi hai.”</strong>
   </div>
 
-  <a class="btn" href="#" onclick="document.getElementById('reveal').style.display='block'; this.style.display='none'; return false;">Reveal My Birthday Promise</a>
+  <a class="btn" href="#" onclick="document.getElementById('reveal').style.display='block'; this.style.opacity='0.5'; return false;">Reveal My Birthday Promise</a>
 
   <div id="reveal">
     I once disappeared without a reason, leaving a story half-written.<br>
     Yet when I returned, you opened the same page with a smile, not a question.<br><br>
     Your kindness healed something I didn’t know was broken.  
-    So here’s my promise, I’ll never let fear write our pauses again.<br><br>
+    So here’s my promise — I’ll never let fear write our pauses again.<br><br>
     You deserve love that stays, not love that disappears.<br><br>
-    <em>Happy Birthday, Vivek! from the girl who found her calm in your kindness, and her forever in your heart.</em><br>
+    <em>Happy Birthday, Vivek — from the girl who found her calm in your kindness, and her forever in your heart.</em><br>
     <div class="note">— Your BC Billi 😼</div>
   </div>
 
@@ -224,6 +223,5 @@
 <audio autoplay loop>
   <source src="humdum.mp3" type="audio/mpeg">
 </audio>
-
 </body>
 </html>
