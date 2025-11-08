@@ -4,14 +4,24 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>For Vivek 🫂 From Mantasha</title>
+
 <style>
+  /* Desktop Background */
   body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: url('2f8e91352f694109d30fdd887ae7ed2b.jpg') no-repeat center center/cover;
+    background: url('miyokudodesktop.jpg') no-repeat center center/cover;
     color: #fff;
     overflow-x: hidden;
     position: relative;
+  }
+
+  /* Mobile Background */
+  @media (max-width: 768px) {
+    body {
+      background: url('miyokudo.jpg') no-repeat center center/cover;
+      background-size: cover;
+    }
   }
 
   .overlay {
@@ -19,7 +29,7 @@
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    z-index: 0;
+    z-index: -1;
   }
 
   .container {
@@ -52,13 +62,19 @@
     max-width: 650px;
   }
 
-  .story, #reveal {
+  .story {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
     backdrop-filter: blur(6px);
     line-height: 1.6;
     margin-bottom: 30px;
+  }
+
+  .note {
+    font-size: 0.9rem;
+    color: #ffd166;
+    margin-top: 20px;
   }
 
   .btn {
@@ -75,10 +91,13 @@
     background: #fff;
   }
 
-  .note {
-    font-size: 0.9rem;
-    color: #ffd166;
+  #reveal {
+    display: none;
     margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.05rem;
   }
 
   footer {
@@ -87,80 +106,66 @@
     color: #ccc;
   }
 
-  #reveal { display: none; }
-
-  /* Floating Photos */
+  /* Floating Polaroid Photos */
   .photo {
     position: absolute;
     width: 120px;
     height: 120px;
     object-fit: cover;
     border: 4px solid #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     animation: float 10s infinite ease-in-out;
     z-index: 1;
+    transition: transform 0.3s ease;
   }
 
   .photo:hover {
     transform: scale(1.05);
   }
 
-  /* Desktop photo placement */
-  .p1 { top: 10%; left: 5%; transform: rotate(-8deg); }
-  .p2 { top: 15%; right: 6%; transform: rotate(5deg); }
-  .p3 { bottom: 22%; left: 8%; transform: rotate(4deg); }
+  /* Positions for 7 photos */
+  .p1 { top: 8%; left: 5%; transform: rotate(-8deg); }
+  .p2 { top: 18%; right: 6%; transform: rotate(5deg); }
+  .p3 { bottom: 20%; left: 8%; transform: rotate(4deg); }
   .p4 { bottom: 15%; right: 8%; transform: rotate(-5deg); }
   .p5 { top: 50%; left: -3%; transform: rotate(10deg); }
   .p6 { top: 60%; right: -3%; transform: rotate(-10deg); }
-  .p7 { bottom: 3%; left: 50%; transform: translateX(-50%) rotate(0deg); }
+  .p7 { bottom: -2%; left: 50%; transform: translateX(-50%) rotate(3deg); } /* centered properly */
 
   @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(2deg); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   /* Floating Hearts */
   .heart {
     position: fixed;
-    color: #ffb6c1;
-    font-size: 22px;
-    animation: floatHearts 6s linear infinite;
+    color: #ff8fab;
+    font-size: 20px;
+    animation: floatHearts 6s ease-in infinite;
     opacity: 1;
-    z-index: 9999;
-    pointer-events: none;
+    z-index: 0;
   }
 
   @keyframes floatHearts {
-    0% { transform: translateY(100vh) scale(0.8); }
-    100% { transform: translateY(-10vh) scale(1.2); }
+    0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 1; }
   }
 
-  /* 🌸 Mobile Optimization 🌸 */
-  @media(max-width: 768px) {
-    h1 { font-size: 1.4rem; }
-    .sub { font-size: 0.9rem; }
-    blockquote { font-size: 1rem; }
-    .story, #reveal { font-size: 0.9rem; margin: 20px 0; }
-    .btn { font-size: 0.9rem; }
-
-    /* Smaller and repositioned photos */
-    .photo { width: 70px; height: 70px; border-width: 3px; }
-    .p1 { top: 3%; left: 5%; }
-    .p2 { top: 3%; right: 5%; }
-    .p3 { bottom: 28%; left: 3%; }
-    .p4 { bottom: 28%; right: 3%; }
-    .p5 { top: 40%; left: 2%; }
-    .p6 { top: 40%; right: 2%; }
-    .p7 { bottom: 2%; left: 50%; transform: translateX(-50%); }
+  @media(max-width:768px){
+    .photo{ width:80px; height:80px; }
+    blockquote{ font-size:1rem; }
+    h1{ font-size:1.6rem; }
   }
 </style>
 </head>
-<body>
 
+<body>
 <div class="overlay"></div>
 
-<!-- Floating Photos -->
+<!-- Floating photos -->
 <img src="Screenshot 2025-11-08 114338.png" class="photo p1" alt="photo1">
 <img src="Snapchat-2011521765.jpg" class="photo p2" alt="photo2">
 <img src="IMG_20251106_143106_104.jpg" class="photo p3" alt="photo3">
@@ -169,18 +174,18 @@
 <img src="WhatsApp2.jpg.jpeg" class="photo p6" alt="photo6">
 <img src="WhatsApp1.jpg.jpeg" class="photo p7" alt="photo7">
 
-<!-- Floating Hearts Script -->
+<!-- Floating Hearts -->
 <script>
   function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    const symbols = ['❤️','💖','💞','💕','🤍'];
-    heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+    const hearts = ['💖','💞','💕','❤️','🤍'];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
     heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (18 + Math.random() * 16) + 'px';
-    heart.style.animationDuration = (6 + Math.random() * 3) + 's';
+    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+    heart.style.animationDuration = (2 + Math.random() * 3) + 's';
     document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 8000);
+    setTimeout(() => heart.remove(), 7000);
   }
   setInterval(createHeart, 400);
 </script>
@@ -188,6 +193,7 @@
 <div class="container">
   <h1>For Vivek 🫂 From Mantasha</h1>
   <div class="sub">ConstaCloud brought us together, but your heart kept me there.</div>
+
   <blockquote>“मेरे हमदम, मेरे सुकून की वजह”</blockquote>
 
   <div class="story">
@@ -205,15 +211,16 @@
     I once disappeared without a reason, leaving a story half-written.<br>
     Yet when I returned, you opened the same page with a smile, not a question.<br><br>
     Your kindness healed something I didn’t know was broken.  
-    So here’s my promise — I’ll never let fear write our pauses again.<br><br>
+    So here’s my promise, I’ll never let fear write our pauses again.<br><br>
     You deserve love that stays, not love that disappears.<br><br>
-    <em>Happy Birthday, Vivek — from the girl who found her calm in your kindness, and her forever in your heart.</em><br>
+    <em>Happy Birthday, Vivek! from the girl who found her calm in your kindness, and her forever in your heart.</em><br>
     <div class="note">— Your BC Billi 😼</div>
   </div>
 
   <footer>Save this memory, but keep this moment in your heart forever 💛</footer>
 </div>
 
+<!-- Background Music -->
 <audio autoplay loop>
   <source src="humdum.mp3" type="audio/mpeg">
 </audio>
