@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     reveal.style.display = "block";
     btn.style.opacity = "0.5";
 
-    // Show "I Love You" only on desktop
-    if (window.innerWidth > 768 && magicLove) {
-      magicLove.style.display = "block";
-    }
+    // Show "I Love You" on all devices
+if (magicLove) {
+  magicLove.style.display = "block";
+}
 
     // Show gallery on mobile after reveal
     if (window.innerWidth <= 768 && mobileGallery) {
