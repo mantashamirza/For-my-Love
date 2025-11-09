@@ -98,7 +98,7 @@ footer { margin-top: 35px; font-size: 0.85rem; color: #ccc; }
   #p8{right:12%;top:40%;}
 }
 
-/* Mobile Gallery */
+/* Mobile Gallery (hidden initially) */
 .mobile-gallery {
   display: none;
   text-align: center;
@@ -124,5 +124,22 @@ footer { margin-top: 35px; font-size: 0.85rem; color: #ccc; }
 }
 @media(max-width:768px){
   .floating-photo{display:none;}
-  .mobile-gallery{display:block;}
+}
+
+/* Magical Love Text (Desktop only) */
+.magic-love {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #ffb6c1;
+  margin-top: 25px;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff9bbb, 0 0 40px #ff69b4;
+  animation: glow 2s ease-in-out infinite alternate;
+  display: none;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 5px #fff, 0 0 10px #ff9bbb; }
+  to { text-shadow: 0 0 20px #fff, 0 0 40px #ff69b4; }
+}
+@media(max-width:768px){
+  .magic-love { display: none; }
 }
