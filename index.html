@@ -87,4 +87,42 @@ body {
 <script>
 for (let i = 0; i < 80; i++) {
   let s = document.createElement("div");
-  s.classList.add("sparkle
+  s.classList.add("sparkle");
+  s.style.top = Math.random() * 100 + "vh";
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.animationDelay = Math.random() + "s";
+  document.body.appendChild(s);
+}
+</script>
+
+<!-- Floating Hearts Generator -->
+<script>
+function createHeart(){
+  const h = document.createElement('div');
+  h.classList.add('heart');
+  h.innerHTML = ['🤍','💕','💞','❤️'][Math.floor(Math.random()*4)];
+  h.style.left = Math.random()*100 + 'vw';
+  h.style.fontSize = (18 + Math.random()*12) + 'px';
+  h.style.animationDuration = (4 + Math.random()*3) + 's';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(), 6000);
+}
+setInterval(createHeart, 350);
+</script>
+
+<div class="wrapper">
+  <h1>✨ Your Surprise is Ready ✨</h1>
+  <p style="margin-top:8px; font-size:1.1rem;">Click below to enter magic</p>
+
+  <button class="open-btn" onclick="openSurprise()">Open Your Surprise</button>
+  <p class="from" style="margin-top:15px; font-size:0.9rem;">— From, Mantasha ♥</p>
+</div>
+
+<script>
+function openSurprise(){
+  window.location.href = "finalsurprise.html";
+}
+</script>
+
+</body>
+</html>
