@@ -1,27 +1,24 @@
-// Floating Hearts Always On
+// Reveal Promise Instantly
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("revealBtn");
+  const reveal = document.getElementById("reveal");
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    reveal.style.display = "block";
+    btn.style.opacity = "0.5";
+  });
+});
+
+// Floating Hearts Forever
 function createHeart() {
-  const h = document.createElement('div');
+  const h = document.createElement("div");
   h.className = "heart";
   h.innerHTML = ["💖","💗","💞","💕","❤️","🤍"][Math.floor(Math.random()*6)];
   h.style.left = Math.random()*100 + "vw";
-  h.style.fontSize = (18 + Math.random()*20) + "px";
-  h.style.animationDuration = (5 + Math.random()*4) + "s";
+  h.style.fontSize = (18 + Math.random()*18) + "px";
+  h.style.animationDuration = (5 + Math.random()*3) + "s";
   document.body.appendChild(h);
-  setTimeout(()=>h.remove(), 9000);
+  setTimeout(()=>h.remove(), 8000);
 }
-setInterval(createHeart, 450);
-
-// Promise Reveal + Gallery Fade
-const btn = document.getElementById("showPromiseBtn");
-const promise = document.getElementById("promiseContainer");
-const gallery = document.getElementById("mobileGallery");
-
-btn.addEventListener("click", () => {
-  promise.style.display = "block";
-  promise.style.animation = "fadeSlide 1.2s ease-out";
-  setTimeout(() => {
-    gallery.style.display = "block";
-  }, 1200);
-  btn.style.opacity = "0.5";
-});
-
+setInterval(createHeart, 400);
