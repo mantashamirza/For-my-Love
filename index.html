@@ -3,128 +3,200 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>A Surprise For You ❤️</title>
-<link rel="stylesheet" href="styles.css">
+<title>Surprise For You ❤️</title>
+
 <style>
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #ffdde1, #ee9ca7);
-}
+  /* Page layout */
+  :root {
+    --card-width: 360px;
+  }
+  html,body{height:100%;margin:0;}
+  body{
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(circle at 10% 10%, #12203a 0%, #071028 30%, #02030a 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    color:#fff;
+  }
 
-/* Center Box */
-.wrapper {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  animation: fadeIn 2s ease forwards;
-}
+  /* soft moving glow behind card */
+  .magic-bg{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    left: calc(50% - 350px);
+    top: calc(50% - 350px);
+    background: radial-gradient(circle at center, rgba(255,230,200,0.12), rgba(255,170,100,0.05) 40%, transparent 60%);
+    filter: blur(60px);
+    pointer-events:none;
+    animation: bgFloat 10s ease-in-out infinite alternate;
+    z-index:0;
+  }
+  @keyframes bgFloat{
+    from{transform: translate(-20px,-10px) scale(1);}
+    to{transform: translate(20px,10px) scale(1.05);}
+  }
 
-/* Button */
-.open-btn {
-  margin-top: 20px;
-  padding: 12px 26px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #fff;
-  border-radius: 12px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: 0.3s;
-}
-.open-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
+  /* entry card */
+  .card {
+    position: relative;
+    z-index: 2;
+    width: var(--card-width);
+    max-width: calc(100% - 32px);
+    padding: 30px;
+    text-align: center; /* ensure center text */
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    transform-origin: center;
+    animation: cardFloat 6s ease-in-out infinite;
+  }
+  @keyframes cardFloat{
+    0%{transform: translateY(0px) rotateX(0deg) rotateY(0deg);}
+    50%{transform: translateY(-8px) rotateX(3deg) rotateY(-3deg);}
+    100%{transform: translateY(0px) rotateX(0deg) rotateY(0deg);}
+  }
 
-/* Floating hearts */
-.heart {
-  position: fixed;
-  color: #ffb6c1;
-  font-size: 20px;
-  animation: floatHearts 6s ease-in infinite;
-  opacity: 0.8;
-  z-index: 0;
-}
+  .title {
+    font-size: 1.6rem;
+    margin: 0 0 8px;
+    line-height:1.1;
+    letter-spacing:0.2px;
+    font-weight:700;
+    text-shadow: 0 0 12px rgba(255,200,150,0.06);
+  }
 
-@keyframes floatHearts {
-  0% { transform: translateY(100vh) scale(0.8); opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
-}
+  .subtitle {
+    margin:0 0 18px;
+    color: rgba(255,255,255,0.9);
+    font-size:1rem;
+    line-height:1.35;
+  }
 
-@keyframes fadeIn {
-  0% {opacity: 0; transform: translate(-50%, -60%);}
-  100% {opacity: 1; transform: translate(-50%, -50%);}
-}
+  .magic-button {
+    display:inline-block;
+    margin-top:6px;
+    padding:12px 26px;
+    border-radius:28px;
+    border:none;
+    background: linear-gradient(135deg,#ffd39f,#ffaf5f);
+    color:#04121a;
+    font-weight:700;
+    font-size:1rem;
+    cursor:pointer;
+    box-shadow: 0 8px 20px rgba(255,160,80,0.18);
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .magic-button:active{ transform: translateY(1px) scale(.995); }
+  .magic-button:focus{ outline: 3px solid rgba(255,200,150,0.28); }
 
-/* Sparkles */
-.sparkle {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: white;
-  border-radius: 50%;
-  animation: sparkleAnim 2s infinite ease-in-out;
-  opacity: 0.6;
-}
+  .signature {
+    margin-top:14px;
+    font-size:0.95rem;
+    opacity:0.85;
+    font-style:italic;
+  }
 
-@keyframes sparkleAnim {
-  0% { transform: scale(1); opacity: .3; }
-  50% { transform: scale(1.6); opacity: 1; }
-  100% { transform: scale(1); opacity:.3; }
-}
+  /* sparkles container (covers full page) */
+  .sparkle-container{ position: absolute; inset:0; pointer-events:none; z-index:1; }
+
+  .sparkle {
+    position:absolute;
+    width:8px; height:8px;
+    background: radial-gradient(circle,#fff6d6,#ffd39f);
+    border-radius:50%;
+    box-shadow:0 0 10px rgba(255,200,150,0.6);
+    opacity:0.9;
+    transform: translateY(0);
+    will-change: transform, opacity;
+  }
+
+  /* responsive: slightly smaller card on phone */
+  @media (max-width:420px){
+    :root{ --card-width: 92vw; }
+    .title{ font-size: 1.25rem; }
+    .subtitle{ font-size: .95rem; }
+    .magic-bg{ width: 520px; height:520px; left: calc(50% - 260px); top: calc(50% - 260px); filter: blur(48px);}
+  }
 </style>
 </head>
-
 <body>
 
-<!-- Sparkles Generator -->
-<script>
-for (let i = 0; i < 80; i++) {
-  let s = document.createElement("div");
-  s.classList.add("sparkle");
-  s.style.top = Math.random() * 100 + "vh";
-  s.style.left = Math.random() * 100 + "vw";
-  s.style.animationDelay = Math.random() + "s";
-  document.body.appendChild(s);
-}
-</script>
+<div class="magic-bg" aria-hidden="true"></div>
+<div class="sparkle-container" aria-hidden="true"></div>
 
-<!-- Floating Hearts Generator -->
-<script>
-function createHeart(){
-  const h = document.createElement('div');
-  h.classList.add('heart');
-  h.innerHTML = ['🤍','💕','💞','❤️'][Math.floor(Math.random()*4)];
-  h.style.left = Math.random()*100 + 'vw';
-  h.style.fontSize = (18 + Math.random()*12) + 'px';
-  h.style.animationDuration = (4 + Math.random()*3) + 's';
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(), 6000);
-}
-setInterval(createHeart, 350);
-</script>
+<div class="card" role="main" aria-labelledby="cardTitle">
+  <h1 id="cardTitle" class="title">✨ Knock Knock… Magic Is Calling ✨</h1>
+  <p class="subtitle">Your surprise is glowing on the other side.<br>Ready to see what I made?</p>
 
-  <div class="magic-container">
-    <h1 class="title">✨ Knock Knock… Magic Is Calling ✨</h1>
-    <p class="subtitle">Your surprise is glowing on the other side.<br>Ready to see what I made?</p>
+  <!-- STEP INSIDE button (fixed) -->
+  <button id="stepBtn" class="magic-button" aria-label="Step Inside">Step Inside</button>
 
-    <button class="magic-button">Step Inside</button>
-
-    <p class="signature">— Made with love, Mantasha ♡</p>
+  <div class="signature">— Made with love, Mantasha ♡</div>
 </div>
+
 <script>
-function openSurprise(){
-  window.location.href = "finalsurprise.html";
-}
+  // — JS: sparkles + button action + center fix (ensures centering)
+  (function(){
+    // Sparkles
+    const SPARKLE_COUNT = 28;
+    const container = document.querySelector('.sparkle-container');
+    function spawnSparkle(){
+      const el = document.createElement('div');
+      el.className = 'sparkle';
+      // random start x near center area for better look
+      const x = Math.random()*window.innerWidth;
+      const size = 6 + Math.random()*12;
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.left = (x) + 'px';
+      el.style.top = (window.innerHeight + (Math.random()*40)) + 'px';
+      el.style.opacity = 0.95;
+      container.appendChild(el);
+
+      // animate up using JS for full control
+      const duration = 4500 + Math.random()*3000;
+      const endY = -100 - Math.random()*200;
+      const start = performance.now();
+      function tick(now){
+        const t = (now - start) / duration;
+        if(t >= 1){
+          el.remove();
+          return;
+        }
+        // ease-out movement
+        const ease = 1 - Math.pow(1 - t, 3);
+        const y = (window.innerHeight + 50) + (endY - (window.innerHeight + 50)) * ease;
+        el.style.transform = 'translateY(' + (y - parseFloat(el.style.top)) + 'px)';
+        el.style.opacity = 1 - (t * 0.95);
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // maintain a gentle continuous sparkle flow
+    let sparkleInterval = setInterval(spawnSparkle, 220);
+    // initial burst
+    for(let i=0;i<12;i++){ setTimeout(spawnSparkle, i*120); }
+
+    // Step Inside button action (works reliably)
+    const stepBtn = document.getElementById('stepBtn');
+    stepBtn.addEventListener('click', function(){
+      // navigate to your surprise page — change filename if your page is named differently
+      window.location.href = 'finalsurprise.html';
+    });
+
+    // ensure card stays centered on resize (fix for some browsers)
+    function recalc(){
+      // no-op placeholder; left in case of future adjustments
+    }
+    window.addEventListener('resize', recalc);
+  })();
 </script>
 
 </body>
 </html>
-
-
