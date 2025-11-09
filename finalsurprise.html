@@ -1,237 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>For Vivek 🫂 From Mantasha</title>
-
-<style>
-  /* ========== BACKGROUND ========== */
-  body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: url('miyokudodesktop.jpg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    overflow-x: hidden;
-    min-height: 100vh;
-    position: relative;
-  }
-
-  @media (max-width: 768px) {
-    body {
-      background: url('miyokudo.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-  }
-
-  .overlay {
-    background: rgba(0, 0, 0, 0.55);
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1;
-  }
-
-  /* ========== MAIN CONTAINER ========== */
-  .container {
-    max-width: 820px;
-    margin: auto;
-    padding: 30px 20px;
-    text-align: center;
-    position: relative;
-    z-index: 5;
-  }
-
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  .sub {
-    font-size: 1rem;
-    color: #f1f1f1;
-    margin-bottom: 25px;
-  }
-
-  blockquote {
-    font-size: 1.2rem;
-    font-style: italic;
-    border-left: 4px solid #ffd166;
-    padding-left: 15px;
-    color: #fff3cd;
-    margin: 25px auto;
-    max-width: 650px;
-  }
-
-  /* ========== STORY + PROMISE GLASS BLUR ========== */
-  .story, #reveal {
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    padding: 22px 18px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    line-height: 1.6;
-    margin-bottom: 30px;
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-
-  /* ========== REVEAL BUTTON ========== */
-  .btn {
-    background: #ffd166;
-    color: #000;
-    padding: 10px 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-  .btn:hover { background: #fff; }
-
-  #reveal {
-    display: none;
-    font-size: 1.05rem;
-  }
-
-  footer {
-    margin-top: 35px;
-    font-size: 0.85rem;
-    color: #ccc;
-  }
-
-  /* ===========================================================
-      FLOATING PHOTOS (DESKTOP ONLY)
-     =========================================================== */
-  .floating-photo {
-    position: absolute;
-    width: 140px;
-    height: 160px;
-    object-fit: cover;
-    border: 5px solid white;
-    border-radius: 12px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.5);
-    animation: floatPhotos 7s ease-in-out infinite;
-    z-index: 1;
-  }
-
-  @keyframes floatPhotos {
-    0%   { transform: translateY(0px) rotate(-2deg); }
-    50%  { transform: translateY(-18px) rotate(2deg); }
-    100% { transform: translateY(0px) rotate(-2deg); }
-  }
-
-  /* DESKTOP floating positions */
-  @media(min-width: 769px) {
-    #p1 { left: 3%;  top: 12%; }
-    #p2 { right: 4%; top: 20%; }
-    #p3 { left: 6%;  top: 55%; }
-    #p4 { right: 8%; top: 60%; }
-    #p5 { left: 20%; top: 75%; }
-    #p6 { right: 22%; top: 78%; }
-    #p7 { left: 10%; top: 35%; }
-    #p8 { right: 11%; top: 40%; }
-  }
-
-  /* MOBILE GRID FOR PHOTOS */
-  @media(max-width: 768px) {
-    .floating-photo { display: none; }
-
-    .mobile-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      padding: 10px 15px;
-      margin-bottom: 25px;
-    }
-
-    .mobile-grid img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 3px solid white;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.5);
-    }
-  }
-
-  /* ========== FLOATING HEARTS ========== */
-  .heart {
-    position: fixed;
-    color: #ff8fab;
-    animation: floatHearts 6s linear infinite;
-    z-index: 0;
-  }
-
-  @keyframes floatHearts {
-    0%   { transform: translateY(100vh) scale(0.7); opacity: 1; }
-    100% { transform: translateY(-10vh) scale(1.3); opacity: 1; }
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Vivek 🫂 From Mantasha</title>
+  <link rel="stylesheet" href="finalsurprise.css" />
+  <script src="finalsurprise.js" defer></script>
 </head>
-
 <body>
-<div class="overlay"></div>
+  <div class="overlay"></div>
 
-<!-- ========== FLOATING HEARTS ALWAYS ========== -->
-<script>
-function createHeart() {
-  const h = document.createElement('div');
-  h.className = "heart";
-  h.innerHTML = ["💖","💗","💞","💕","❤️","🤍"][Math.floor(Math.random()*6)];
-  h.style.left = Math.random()*100 + "vw";
-  h.style.fontSize = (18 + Math.random()*20) + "px";
-  h.style.animationDuration = (5 + Math.random()*4) + "s";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(), 9000);
-}
-setInterval(createHeart, 450);
-</script>
+  <div class="container">
+    <h1>For Vivek 🫂 From Mantasha</h1>
+    <div class="sub">ConstaCloud brought us together, but your heart kept me there.</div>
 
-<!-- ========== DESKTOP FLOATING PHOTOS (8 images) ========== -->
-<img src="Snapchat-1211420870.jpg.jpg" class="floating-photo" id="p1">
-<img src="WhatsApp2.jpg.jpeg" class="floating-photo" id="p2">
-<img src="Snapchat-656285190.jpg.jpg" class="floating-photo" id="p3">
-<img src="Snapchat-1115594145.jpg" class="floating-photo" id="p4">
-<img src="WhatsApp1.jpg.jpeg" class="floating-photo" id="p5">
-<img src="Snapchat-2011521765.jpg" class="floating-photo" id="p6">
-<img src="IMG_20251106_143103_326.jpg" class="floating-photo" id="p7">
-<img src="IMG_20251106_143106_104.jpg" class="floating-photo" id="p8">
+    <blockquote>“मेरे हमदम, मेरे सुकून की वजह”</blockquote>
 
-<!-- ========== MOBILE GRID (only shows on phones) ========== -->
-<div class="mobile-grid">
-  <img src="Snapchat-1211420870.jpg.jpg">
-  <img src="IMG_20251106_143103_326.jpg">
-  <img src="WhatsApp1.jpg.jpeg">
-  <img src="Snapchat-656285190.jpg.jpg">
-  <img src="Snapchat-1115594145.jpg">
-  <img src="IMG_20251106_143106_104.jpg">
-  <img src="WhatsApp2.jpg.jpeg">
-  <img src="Snapchat-2011521765.jpg">
-</div>
+    <!-- Desktop floating photos -->
+    <div class="floating-photos">
+      <img src="Snapchat-1211420870.jpg.jpg"> class="photo p1" alt="">
+      <img src="IMG_20251106_143103_326.jpg"> class="photo p2" alt="">
+      <img src="WhatsApp1.jpg.jpeg"> class="photo p3" alt="">
+      <img src="Snapchat-656285190.jpg.jpg"> class="photo p4" alt="">
+      <img src="Snapchat-1115594145.jpg"> class="photo p5" alt="">
+      <img src="IMG_20251106_143106_104.jpg"> class="photo p6" alt="">
+      <img src="WhatsApp2.jpg.jpeg"> class="photo p7" alt="">
+      <img src="Snapchat-2011521765.jpg"> class="photo p8" alt="">
 
-<!-- ========== MAIN CONTENT ========== -->
-<div class="container">
-  <h1>For Vivek 🫂 From Mantasha</h1>
-  <div class="sub">ConstaCloud brought us together, but your heart kept me there.</div>
 
-  <blockquote>“मेरे हमदम, मेरे सुकून की वजह”</blockquote>
+    </div>
 
-  <div class="story">
-    We were in different cities, working on the same project, you as the developer, me as the manager.<br>
-    Tight deadlines, remote calls, and long evenings.<br><br>
-    The job tested us, but your voice gave me a reason to smile.  
-    What began as work became my refuge.  
-    And it all started the moment I said for the very first time,<br>
-    <strong>“Sir... aapki awaaz bahut acchi hai.”</strong>
-  </div>
+    <div class="story">
+      We were in different cities, working on the same project, you as the developer, me as the manager.<br>
+      Tight deadlines, remote calls, and long evenings.<br><br>
+      The job tested us, but your voice gave me a reason to smile.  
+      What began as work became my refuge.  
+      And it all started the moment I said for the very first time,  
+      <strong>“Sir... aapki awaaz bahut acchi hai.”</strong>
+    </div>
 
-  <a class="btn" href="#" onclick="
-      document.getElementById('reveal').style.display='block';
-      this.style.opacity='0.6';
-      return false;
-  ">Reveal My Birthday Promise</a>
+    <!-- Mobile-only memories grid -->
+    <div class="memories">
+      <h2>Our Memories 💕</h2>
+      <div class="photo-grid">
+  <img src="Snapchat-1211420870.jpg.jpg"> alt="">
+  <img src="IMG_20251106_143103_326.jpg"> alt="">
+  <img src="WhatsApp1.jpg.jpeg"> alt="">
+  <img src="Snapchat-656285190.jpg.jpg"> alt="">
+  <img src="Snapchat-1115594145.jpg"> alt="">
+  <img src="IMG_20251106_143106_104.jpg"> alt="">
+  <img src="WhatsApp2.jpg.jpeg"> alt="">
+  <img src="Snapchat-2011521765.jpg"> alt="">
 
-  <div id="reveal">
+    </div>
+
+    <a class="btn" href="#" onclick="revealPromise(); return false;">Reveal My Birthday Promise</a>
+
+    <div id="reveal">
 Once I met you, then drifted away,<br>
 Not knowing my heart would find its way.<br>
 Maybe we paused so fate could align,<br>
@@ -262,19 +87,16 @@ Every beat of my heart whispers you.<br>
 No poems, no words could ever define,<br>
 How lucky I am that you are mine.<br>
 <br>
-<em>Happy Birthday, Vivek! from the girl who found her calm in your kindness,  
-    and her forever in your heart.</em><br>
+      <em>Happy Birthday, Vivek — from the girl who found her calm in your kindness, and her forever in your heart.</em><br>
+      <div class="note">— Your BC Billi 😼</div>
+    </div>
 
-    <div class="note">– Your BC Billi 😼</div>
+    <footer>Save this memory, but keep this moment in your heart forever 💛</footer>
   </div>
 
-  <footer>Save this memory, but keep this moment in your heart forever 💛</footer>
-</div>
-
-<!-- BACKGROUND MUSIC -->
-<audio autoplay loop>
-  <source src="humdum.mp3" type="audio/mpeg">
-</audio>
-
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="humdum.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
