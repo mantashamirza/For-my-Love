@@ -22,22 +22,24 @@ if (magicLove) {
   });
 });
 
-// Floating Hearts — start instantly, continue forever
+// ❤️ Floating Hearts - instant start, smooth flow, no layout damage
 function createHeart() {
   const h = document.createElement("div");
   h.className = "heart";
-  h.innerHTML = ["💖","💗","💞","💕","❤️","🤍"][Math.floor(Math.random()*6)];
-  h.style.left = Math.random()*100 + "vw";
-  h.style.fontSize = (18 + Math.random()*18) + "px";
-  h.style.animationDuration = (5 + Math.random()*3) + "s";
+  const emojis = ["💖", "💗", "💞", "💕", "❤️", "🤍"];
+  h.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.fontSize = (18 + Math.random() * 20) + "px";
+  h.style.animationDuration = (5 + Math.random() * 3) + "s";
   document.body.appendChild(h);
-  setTimeout(()=>h.remove(), 7000);
+  setTimeout(() => h.remove(), 8000);
 }
 
-// Create some instantly
+// Create a few instantly on load
 for (let i = 0; i < 10; i++) {
   createHeart();
 }
 
-// Continue spawning new hearts forever
-setInterval(createHeart, 400);
+// Continue endlessly
+setInterval(createHeart, 450);
+
