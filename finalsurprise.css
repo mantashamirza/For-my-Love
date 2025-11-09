@@ -59,30 +59,40 @@ blockquote {
 .btn:hover { background: #fff; }
 footer { margin-top: 35px; font-size: 0.85rem; color: #ccc; }
 
-/* Floating Hearts — smooth, safe, and always visible */
+/* Floating Hearts — smooth for all devices */
 .heart {
   position: fixed;
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 20px;
   color: #ff8fab;
-  animation: floatHearts 7s linear infinite;
+  animation: floatHearts 8s linear infinite;
   opacity: 0.9;
-  z-index: 50; /* stays above text but below floating photos */
+  z-index: 1000; /* above text */
   pointer-events: none;
 }
 
 @keyframes floatHearts {
   0% {
-    transform: translateY(0) translateX(-50%) scale(0.9);
+    transform: translateX(-50%) translateY(0) scale(0.9);
     opacity: 1;
   }
   50% {
     opacity: 0.8;
+    transform: translateX(-50%) translateY(-50vh) scale(1);
   }
   100% {
-    transform: translateY(-100vh) translateX(-50%) scale(1.2);
-    opacity: 0.9;
+    transform: translateX(-50%) translateY(-100vh) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Smaller hearts for mobile */
+@media (max-width: 768px) {
+  .heart {
+    font-size: 14px;
+    animation-duration: 9s;
   }
 }
 
