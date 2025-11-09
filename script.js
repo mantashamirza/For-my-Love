@@ -16,5 +16,5 @@ setInterval(createSparkle, 300);
 
 // Open page function
 function openSurprise() {
-    window.location.href = "main.html";
+    window.location.href = "finalsurprise.html";
 }
