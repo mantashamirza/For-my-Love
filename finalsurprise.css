@@ -59,17 +59,26 @@ blockquote {
 .btn:hover { background: #fff; }
 footer { margin-top: 35px; font-size: 0.85rem; color: #ccc; }
 
-/* Floating Hearts */
+/* Floating Hearts - now always above text and start instantly */
 .heart {
   position: fixed;
+  top: 0;
   color: #ff8fab;
   animation: floatHearts 6s linear infinite;
-  z-index: 0;
+  opacity: 1;
+  z-index: 9999; /* ensures hearts are above everything */
+  pointer-events: none; /* prevents them from blocking buttons/text */
 }
+
 @keyframes floatHearts {
-  0% { transform: translateY(100vh) scale(0.7); opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1.3); opacity: 1; }
-}
+  0% {
+    transform: translateY(100vh) scale(0.7);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.3);
+    opacity: 1;
+  }
 
 /* Floating Photos for Desktop */
 .floating-photo {
