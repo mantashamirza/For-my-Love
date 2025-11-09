@@ -1,0 +1,130 @@
+/* Full magical gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #0a1c3e, #030b18, #000000);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Soft spotlight glow */
+.magic-bg {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+    filter: blur(40px);
+    border-radius: 50%;
+    animation: glowMove 8s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove {
+    0% { transform: translate(-30px, -40px) scale(1); }
+    100% { transform: translate(40px, 30px) scale(1.2); }
+}
+
+/* Main entry card */
+.entry-card {
+    position: relative;
+    width: 320px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: cardFloat 6s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255,255,255,0.08);
+    transform-style: preserve-3d;
+}
+
+@keyframes cardFloat {
+    0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+    50% { transform: translateY(-10px) rotateX(4deg) rotateY(-4deg); }
+    100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.open-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    background: linear-gradient(135deg, #ffd39f, #ffaf5f);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,200,150,0.4);
+    transition: 0.3s ease;
+}
+
+.open-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255,200,150,0.6);
+}
+
+.from {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+/* Sparkles */
+.sparkle-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ffe3ab, #ffad5c);
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: sparkleFloat 6s linear infinite;
+}
+
+@keyframes sparkleFloat {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-200px) scale(0.5); opacity: 0; }
+}
+
+/* DESKTOP: show floating photos */
+@media (min-width: 900px) {
+    .floating-photo {
+        display: block;
+    }
+}
+
+/* MOBILE: hide floating photos */
+@media (max-width: 900px) {
+    .floating-photo {
+        display: none;
+    }
+}
+
+/* Story container blur */
+.story-container {
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 20px;
+}
