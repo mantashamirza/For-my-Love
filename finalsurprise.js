@@ -22,7 +22,7 @@ if (magicLove) {
   });
 });
 
-// Floating Hearts Forever
+// Floating Hearts — start instantly, continue forever
 function createHeart() {
   const h = document.createElement("div");
   h.className = "heart";
@@ -31,6 +31,13 @@ function createHeart() {
   h.style.fontSize = (18 + Math.random()*18) + "px";
   h.style.animationDuration = (5 + Math.random()*3) + "s";
   document.body.appendChild(h);
-  setTimeout(()=>h.remove(), 8000);
+  setTimeout(()=>h.remove(), 7000);
 }
+
+// Create some instantly
+for (let i = 0; i < 10; i++) {
+  createHeart();
+}
+
+// Continue spawning new hearts forever
 setInterval(createHeart, 400);
