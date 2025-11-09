@@ -1,36 +1,19 @@
-// SHOW PROMISE BUTTON ACTION
-document.getElementById("showPromiseBtn").addEventListener("click", () => {
-    document.getElementById("promiseContainer").style.display = "block";
-});
-
-// FLOATING HEARTS GENERATOR
+// Floating Hearts — always active
 function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤";
-    
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = 5 + Math.random() * 3 + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 8000);
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  const hearts = ['💖','💞','💕','❤️','🤍'];
+  heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+  heart.style.animationDuration = (5 + Math.random() * 3) + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 8000);
 }
+setInterval(createHeart, 400);
 
-setInterval(createHeart, 900);
-
-// FIREFLY SPARKLE GENERATOR (slow)
-function createSparkle() {
-    const sp = document.createElement("div");
-    sp.classList.add("sparkle");
-
-    sp.style.left = Math.random() * 100 + "vw";
-    sp.style.bottom = Math.random() * 30 + "vh";
-    sp.style.animationDuration = 6 + Math.random() * 4 + "s";
-
-    document.body.appendChild(sp);
-
-    setTimeout(() => sp.remove(), 10000);
+// Reveal Promise
+function revealPromise() {
+  document.getElementById('reveal').style.display = 'block';
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
-
-setInterval(createSparkle, 1200);
