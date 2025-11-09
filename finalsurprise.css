@@ -117,10 +117,16 @@ footer { margin-top: 35px; font-size: 0.85rem; color: #ccc; }
 }
 .mobile-gallery img {
   width: 100%;
-  height: 130px;
+  height: 170px; /* increased for better photo visibility */
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px; /* softer frame for taller images */
   border: 3px solid white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.mobile-gallery img:hover {
+  transform: scale(1.02);
 }
 @media(max-width:768px){
   .floating-photo{display:none;}
