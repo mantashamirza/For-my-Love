@@ -1,12 +1,24 @@
-// Reveal Promise Instantly
+// Reveal Promise + Show Magical Text + Mobile Gallery
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("revealBtn");
   const reveal = document.getElementById("reveal");
+  const mobileGallery = document.getElementById("mobileGallery");
+  const magicLove = document.querySelector(".magic-love");
 
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     reveal.style.display = "block";
     btn.style.opacity = "0.5";
+
+    // Show "I Love You" only on desktop
+    if (window.innerWidth > 768 && magicLove) {
+      magicLove.style.display = "block";
+    }
+
+    // Show gallery on mobile after reveal
+    if (window.innerWidth <= 768 && mobileGallery) {
+      mobileGallery.style.display = "block";
+    }
   });
 });
 
